@@ -1,0 +1,1760 @@
+I, [2015-11-24T05:22:43.789888 #20970]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 05:22:43 +0000
+F, [2015-11-24T05:22:43.795582 #20970] FATAL -- : 
+ActiveRecord::NoDatabaseError (Unknown database 'db/pro.mysql'):
+  activerecord (4.2.4) lib/active_record/connection_adapters/mysql2_adapter.rb:23:in `rescue in mysql2_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/mysql2_adapter.rb:10:in `mysql2_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+  composite_primary_keys (8.1.1) lib/composite_primary_keys/connection_adapters/abstract/connection_specification_changes.rb:51:in `retrieve_connection'
+  composite_primary_keys (8.1.1) lib/composite_primary_keys/connection_adapters/abstract/connection_specification_changes.rb:33:in `connection'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:51:in `restore_query_cache_settings'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:43:in `rescue in call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+D, [2015-11-24T05:25:08.470268 #21006] DEBUG -- :   [1m[36m (10.1ms)[0m  [1mCREATE TABLE `apartment_data` (`id` int(11) auto_increment PRIMARY KEY, `address` varchar(255) NOT NULL, `date_built` date, `comments` text, `cost` float(24), `owner_id` int(11) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `name` varchar(255)) ENGINE=InnoDB[0m
+D, [2015-11-24T05:25:08.482154 #21006] DEBUG -- :   [1m[35m (9.2ms)[0m  CREATE TABLE `lives` (`id` int(11) auto_increment PRIMARY KEY, `ssn` varchar(255) NOT NULL, `maintenance` text, `contract` blob(16777215), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2015-11-24T05:25:08.505681 #21006] DEBUG -- :   [1m[36m (20.4ms)[0m  [1mCREATE UNIQUE INDEX `composite_index` USING btree ON `lives` (`id`, `ssn`) [0m
+D, [2015-11-24T05:25:08.515551 #21006] DEBUG -- :   [1m[35m (6.7ms)[0m  CREATE TABLE `other_properties` (`id` int(11) auto_increment PRIMARY KEY, `address` varchar(255) NOT NULL, `date_built` date, `comments` text, `cost` float(24), `owner_id` int(11) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2015-11-24T05:25:08.524350 #21006] DEBUG -- :   [1m[36m (3.9ms)[0m  [1mCREATE TABLE `parking_lots` (`id` int(11) auto_increment PRIMARY KEY, `ssn` varchar(255), `apartment_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+D, [2015-11-24T05:25:08.533482 #21006] DEBUG -- :   [1m[35m (5.8ms)[0m  CREATE TABLE `residents` (`ssn` int(11) auto_increment PRIMARY KEY, `document` blob(16777215), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2015-11-24T05:25:08.555164 #21006] DEBUG -- :   [1m[36m (19.1ms)[0m  [1mCREATE TABLE `rooms` (`id` int(11) auto_increment PRIMARY KEY, `apartment_id` int(11) NOT NULL, `rent` float(24) NOT NULL, `layout` blob(16777215), `request` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+D, [2015-11-24T05:25:08.564769 #21006] DEBUG -- :   [1m[35m (5.2ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `unconfirmed_email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `username` varchar(255)) ENGINE=InnoDB
+D, [2015-11-24T05:25:08.584833 #21006] DEBUG -- :   [1m[36m (17.5ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` USING btree ON `users` (`email`) [0m
+D, [2015-11-24T05:25:08.608397 #21006] DEBUG -- :   [1m[35m (20.9ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` USING btree ON `users` (`reset_password_token`) 
+D, [2015-11-24T05:25:08.631919 #21006] DEBUG -- :   [1m[36m (18.9ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_username` USING btree ON `users` (`username`) [0m
+D, [2015-11-24T05:25:08.651050 #21006] DEBUG -- :   [1m[35m (6.9ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+D, [2015-11-24T05:25:08.671751 #21006] DEBUG -- :   [1m[36m (19.8ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) [0m
+D, [2015-11-24T05:25:08.673294 #21006] DEBUG -- :   [1m[35m (0.7ms)[0m  SELECT version FROM `schema_migrations`
+D, [2015-11-24T05:25:08.682041 #21006] DEBUG -- :   [1m[36m (2.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20151124042125')[0m
+D, [2015-11-24T05:25:08.684345 #21006] DEBUG -- :   [1m[35m (2.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20151122032637')
+D, [2015-11-24T05:25:08.687626 #21006] DEBUG -- :   [1m[36m (2.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20151122033659')[0m
+D, [2015-11-24T05:25:08.689858 #21006] DEBUG -- :   [1m[35m (1.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20151122043420')
+D, [2015-11-24T05:25:08.692215 #21006] DEBUG -- :   [1m[36m (2.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20151122043615')[0m
+D, [2015-11-24T05:25:08.694407 #21006] DEBUG -- :   [1m[35m (2.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20151122050026')
+D, [2015-11-24T05:25:08.696524 #21006] DEBUG -- :   [1m[36m (1.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20151122205921')[0m
+D, [2015-11-24T05:25:08.698598 #21006] DEBUG -- :   [1m[35m (1.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20151122210202')
+D, [2015-11-24T05:25:08.701529 #21006] DEBUG -- :   [1m[36m (2.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20151122210918')[0m
+D, [2015-11-24T05:25:08.704304 #21006] DEBUG -- :   [1m[35m (2.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20151122211311')
+D, [2015-11-24T05:25:08.709922 #21006] DEBUG -- :   [1m[36m (5.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20151122213512')[0m
+D, [2015-11-24T05:25:08.712861 #21006] DEBUG -- :   [1m[35m (2.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20151122214404')
+D, [2015-11-24T05:25:08.716464 #21006] DEBUG -- :   [1m[36m (3.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20151122214517')[0m
+D, [2015-11-24T05:25:08.720000 #21006] DEBUG -- :   [1m[35m (3.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20151122215947')
+D, [2015-11-24T05:25:08.722367 #21006] DEBUG -- :   [1m[36m (2.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20151122221825')[0m
+I, [2015-11-24T05:26:08.112644 #21052]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 05:26:08 +0000
+I, [2015-11-24T05:26:08.145190 #21052]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T05:26:08.224316 #21052]  INFO -- :   Rendered home/index.html.erb within layouts/application (1.4ms)
+I, [2015-11-24T05:26:08.234881 #21052]  INFO -- : Completed 200 OK in 89ms (Views: 71.3ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T05:26:08.259468 #21052]  INFO -- : Started GET "/assets/application-91d947bbc0fddba8bcedafdd377760ed5d4753b2d2f66500540dc05b269b9c90.css" for 10.0.2.2 at 2015-11-24 05:26:08 +0000
+F, [2015-11-24T05:26:08.263431 #21052] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-91d947bbc0fddba8bcedafdd377760ed5d4753b2d2f66500540dc05b269b9c90.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T05:26:08.272187 #21052]  INFO -- : Started GET "/assets/application-2d7968994a750350abb50028e047ed290d63c9bac692117bce66d6c43f178800.js" for 10.0.2.2 at 2015-11-24 05:26:08 +0000
+F, [2015-11-24T05:26:08.273325 #21052] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-2d7968994a750350abb50028e047ed290d63c9bac692117bce66d6c43f178800.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T05:26:08.277876 #21052]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 05:26:08 +0000
+F, [2015-11-24T05:26:08.278402 #21052] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T05:27:36.175063 #21089]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 05:27:36 +0000
+I, [2015-11-24T05:27:36.193889 #21089]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T05:27:36.528767 #21089]  INFO -- :   Rendered home/index.html.erb within layouts/application (269.0ms)
+I, [2015-11-24T05:27:36.539956 #21089]  INFO -- : Completed 200 OK in 345ms (Views: 329.3ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T05:27:36.551325 #21089]  INFO -- : Started GET "/assets/application-91d947bbc0fddba8bcedafdd377760ed5d4753b2d2f66500540dc05b269b9c90.css" for 10.0.2.2 at 2015-11-24 05:27:36 +0000
+F, [2015-11-24T05:27:41.682801 #21089] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-91d947bbc0fddba8bcedafdd377760ed5d4753b2d2f66500540dc05b269b9c90.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T05:27:41.686501 #21089]  INFO -- : Started GET "/assets/application-2d7968994a750350abb50028e047ed290d63c9bac692117bce66d6c43f178800.js" for 10.0.2.2 at 2015-11-24 05:27:41 +0000
+F, [2015-11-24T05:27:46.620212 #21089] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-2d7968994a750350abb50028e047ed290d63c9bac692117bce66d6c43f178800.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T05:27:46.626425 #21089]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 05:27:46 +0000
+F, [2015-11-24T05:27:46.628363 #21089] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T05:28:05.646279 #21089]  INFO -- : Started GET "/users/sign_up" for 10.0.2.2 at 2015-11-24 05:28:05 +0000
+I, [2015-11-24T05:28:05.648833 #21089]  INFO -- : Processing by Users::RegistrationsController#new as HTML
+I, [2015-11-24T05:28:05.774223 #21089]  INFO -- :   Rendered users/shared/_links.html.erb (1.4ms)
+I, [2015-11-24T05:28:05.774907 #21089]  INFO -- :   Rendered users/registrations/new.html.erb within layouts/application (41.0ms)
+I, [2015-11-24T05:28:05.775954 #21089]  INFO -- : Completed 200 OK in 127ms (Views: 106.6ms | ActiveRecord: 1.3ms)
+I, [2015-11-24T05:28:05.802691 #21089]  INFO -- : Started GET "/assets/application-91d947bbc0fddba8bcedafdd377760ed5d4753b2d2f66500540dc05b269b9c90.css" for 10.0.2.2 at 2015-11-24 05:28:05 +0000
+F, [2015-11-24T05:28:05.805770 #21089] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-91d947bbc0fddba8bcedafdd377760ed5d4753b2d2f66500540dc05b269b9c90.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T05:28:05.809960 #21089]  INFO -- : Started GET "/assets/application-2d7968994a750350abb50028e047ed290d63c9bac692117bce66d6c43f178800.js" for 10.0.2.2 at 2015-11-24 05:28:05 +0000
+F, [2015-11-24T05:28:05.811586 #21089] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-2d7968994a750350abb50028e047ed290d63c9bac692117bce66d6c43f178800.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T05:31:23.445770 #21126]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 05:31:23 +0000
+I, [2015-11-24T05:31:23.469606 #21126]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T05:31:23.803514 #21126]  INFO -- :   Rendered home/index.html.erb within layouts/application (262.4ms)
+I, [2015-11-24T05:31:23.814484 #21126]  INFO -- : Completed 200 OK in 344ms (Views: 328.3ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T05:31:23.834908 #21126]  INFO -- : Started GET "/assets/application-91d947bbc0fddba8bcedafdd377760ed5d4753b2d2f66500540dc05b269b9c90.css" for 10.0.2.2 at 2015-11-24 05:31:23 +0000
+F, [2015-11-24T05:31:24.505560 #21126] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-91d947bbc0fddba8bcedafdd377760ed5d4753b2d2f66500540dc05b269b9c90.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T05:31:24.509900 #21126]  INFO -- : Started GET "/assets/application-2d7968994a750350abb50028e047ed290d63c9bac692117bce66d6c43f178800.js" for 10.0.2.2 at 2015-11-24 05:31:24 +0000
+F, [2015-11-24T05:31:24.789202 #21126] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/application-2d7968994a750350abb50028e047ed290d63c9bac692117bce66d6c43f178800.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T05:31:24.793666 #21126]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 05:31:24 +0000
+F, [2015-11-24T05:31:24.794395 #21126] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:26:46.483693 #21995]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 06:26:46 +0000
+I, [2015-11-24T06:26:46.509520 #21995]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T06:26:46.846461 #21995]  INFO -- :   Rendered home/index.html.erb within layouts/application (269.3ms)
+I, [2015-11-24T06:26:46.855947 #21995]  INFO -- : Completed 200 OK in 345ms (Views: 329.5ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:26:46.880339 #21995]  INFO -- : Started GET "/assets/application-a1a732464b49156cc2c21bc8941715ad5e7abe3550eef2cb7affc148bc24b4eb.css" for 10.0.2.2 at 2015-11-24 06:26:46 +0000
+I, [2015-11-24T06:26:48.177342 #21995]  INFO -- : Started GET "/assets/application-5c50659594eb1ba61f5dff1b8cfae55deaf38a949d474156351914ae7fad2d3c.js" for 10.0.2.2 at 2015-11-24 06:26:48 +0000
+I, [2015-11-24T06:26:48.587743 #21995]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 06:26:48 +0000
+F, [2015-11-24T06:26:48.589281 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:26:48.641256 #21995]  INFO -- : Started GET "/images/home1.jpg" for 10.0.2.2 at 2015-11-24 06:26:48 +0000
+F, [2015-11-24T06:26:48.641992 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/home1.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:26:48.662224 #21995]  INFO -- : Started GET "/assets/twitter/bootstrap/glyphicons-halflings-regular-fc969dc1c6ff531abcf368089dcbaf5775133b0626ff56b52301a059fc0f9e1e.woff" for 10.0.2.2 at 2015-11-24 06:26:48 +0000
+I, [2015-11-24T06:26:48.694277 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff" for 10.0.2.2 at 2015-11-24 06:26:48 +0000
+F, [2015-11-24T06:26:48.695867 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:26:48.713465 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.ttf" for 10.0.2.2 at 2015-11-24 06:26:48 +0000
+F, [2015-11-24T06:26:48.714436 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:26:48.738221 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.svg" for 10.0.2.2 at 2015-11-24 06:26:48 +0000
+F, [2015-11-24T06:26:48.739212 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.svg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:26:52.865477 #21995]  INFO -- : Started GET "/users/sign_in" for 10.0.2.2 at 2015-11-24 06:26:52 +0000
+I, [2015-11-24T06:26:52.867406 #21995]  INFO -- : Processing by Users::SessionsController#new as HTML
+I, [2015-11-24T06:26:53.032472 #21995]  INFO -- :   Rendered users/shared/_links.html.erb (2.7ms)
+I, [2015-11-24T06:26:53.032944 #21995]  INFO -- :   Rendered users/sessions/new.html.erb within layouts/application (51.9ms)
+I, [2015-11-24T06:26:53.034238 #21995]  INFO -- : Completed 200 OK in 167ms (Views: 146.0ms | ActiveRecord: 1.6ms)
+I, [2015-11-24T06:26:55.391893 #21995]  INFO -- : Started POST "/users/sign_in" for 10.0.2.2 at 2015-11-24 06:26:55 +0000
+I, [2015-11-24T06:26:55.393427 #21995]  INFO -- : Processing by Users::SessionsController#create as HTML
+I, [2015-11-24T06:26:55.393673 #21995]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"zx1eT/nMxcXp3xjn5oigFRFQYAsogmeLAQb1BkFlssCyjmSq6ZbnCvpdREXF7RrOgG11a5adoCLgHU7QAIbuCw==", "user"=>{"login"=>"blovingtg@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+D, [2015-11-24T06:26:55.396753 #21995] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE (username = 'blovingtg@gmail.com' OR lower(email) = lower('blovingtg@gmail.com'))  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2015-11-24T06:26:55.397202 #21995]  INFO -- : Completed 401 Unauthorized in 3ms (ActiveRecord: 0.5ms)
+I, [2015-11-24T06:26:55.398796 #21995]  INFO -- : Processing by Users::SessionsController#new as HTML
+I, [2015-11-24T06:26:55.398834 #21995]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"zx1eT/nMxcXp3xjn5oigFRFQYAsogmeLAQb1BkFlssCyjmSq6ZbnCvpdREXF7RrOgG11a5adoCLgHU7QAIbuCw==", "user"=>{"login"=>"blovingtg@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+I, [2015-11-24T06:26:55.526634 #21995]  INFO -- :   Rendered users/shared/_links.html.erb (0.1ms)
+I, [2015-11-24T06:26:55.526985 #21995]  INFO -- :   Rendered users/sessions/new.html.erb within layouts/application (3.4ms)
+I, [2015-11-24T06:26:55.528105 #21995]  INFO -- : Completed 200 OK in 129ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:26:58.909848 #21995]  INFO -- : Started GET "/users/sign_up" for 10.0.2.2 at 2015-11-24 06:26:58 +0000
+I, [2015-11-24T06:26:58.913233 #21995]  INFO -- : Processing by Users::RegistrationsController#new as HTML
+I, [2015-11-24T06:26:58.970723 #21995]  INFO -- :   Rendered users/shared/_links.html.erb (0.6ms)
+I, [2015-11-24T06:26:58.971097 #21995]  INFO -- :   Rendered users/registrations/new.html.erb within layouts/application (4.4ms)
+I, [2015-11-24T06:26:58.972576 #21995]  INFO -- : Completed 200 OK in 59ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:27:10.160808 #21995]  INFO -- : Started POST "/users" for 10.0.2.2 at 2015-11-24 06:27:10 +0000
+I, [2015-11-24T06:27:10.163016 #21995]  INFO -- : Processing by Users::RegistrationsController#create as HTML
+I, [2015-11-24T06:27:10.163277 #21995]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"rRB63PIxzhtm1u9QD6uIN30e9gjT95ra5hGvQFlAruXQg0A54mvs1HVUs/IszjLs7CPjaG3oXXMHChSWGKPyLg==", "user"=>{"username"=>"bungo", "email"=>"blovingtg@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+D, [2015-11-24T06:27:10.248494 #21995] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-11-24T06:27:10.256978 #21995] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'blovingtg@gmail.com' LIMIT 1[0m
+D, [2015-11-24T06:27:10.258157 #21995] DEBUG -- :   [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`username` = 'bungo' LIMIT 1
+D, [2015-11-24T06:27:10.773387 #21995] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`confirmation_token` = '3aac514bd4aa5b7d2100b723c056a0573bd192cf82bbb5bdad5a01e4c29be81d'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-11-24T06:27:10.776216 #21995] DEBUG -- :   [1m[35mSQL (0.6ms)[0m  INSERT INTO `users` (`username`, `email`, `encrypted_password`, `created_at`, `updated_at`, `confirmation_token`, `confirmation_sent_at`) VALUES ('bungo', 'blovingtg@gmail.com', '$2a$10$iASWPCFsjTVDUttnuMNTueO2aUIOIZuNfbI8pd.gQawGZ2w6UG/x2', '2015-11-24 06:27:10', '2015-11-24 06:27:10', 'aAVhzyh7yum4oxUveQZu', '2015-11-24 06:27:10')
+I, [2015-11-24T06:27:10.980093 #21995]  INFO -- :   Rendered /home/vagrant/.rvm/gems/ruby-2.2.2/gems/devise-3.5.2/app/views/devise/mailer/confirmation_instructions.html.erb (1.1ms)
+D, [2015-11-24T06:27:11.349224 #21995] DEBUG -- : 
+Devise::Mailer#confirmation_instructions: processed outbound mail in 563.2ms
+I, [2015-11-24T06:27:13.263094 #21995]  INFO -- : 
+Sent mail to blovingtg@gmail.com (1913.5ms)
+D, [2015-11-24T06:27:13.263312 #21995] DEBUG -- : Date: Tue, 24 Nov 2015 06:27:11 +0000
+From: yourapartment.com
+Reply-To: yourapartment.com
+To: blovingtg@gmail.com
+Message-ID: <5654033f59195_55eb3fb420af3df4460f8@10-0-2-15.dynamic.oregonstate.edu.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome blovingtg@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=aAVhzyh7yum4oxUveQZu">Confirm my account</a></p>
+
+D, [2015-11-24T06:27:13.277175 #21995] DEBUG -- :   [1m[36m (13.2ms)[0m  [1mCOMMIT[0m
+I, [2015-11-24T06:27:13.326713 #21995]  INFO -- : Redirected to http://0.0.0.0:3000/
+I, [2015-11-24T06:27:13.327079 #21995]  INFO -- : Completed 302 Found in 3164ms (ActiveRecord: 14.8ms)
+I, [2015-11-24T06:27:13.334394 #21995]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 06:27:13 +0000
+I, [2015-11-24T06:27:13.336277 #21995]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T06:27:13.339255 #21995]  INFO -- :   Rendered home/index.html.erb within layouts/application (1.7ms)
+I, [2015-11-24T06:27:13.340738 #21995]  INFO -- : Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:27:13.433058 #21995]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 06:27:13 +0000
+F, [2015-11-24T06:27:13.434072 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:27:13.456311 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff" for 10.0.2.2 at 2015-11-24 06:27:13 +0000
+F, [2015-11-24T06:27:13.458076 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:27:13.476678 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.ttf" for 10.0.2.2 at 2015-11-24 06:27:13 +0000
+F, [2015-11-24T06:27:13.478694 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:27:13.539263 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.svg" for 10.0.2.2 at 2015-11-24 06:27:13 +0000
+F, [2015-11-24T06:27:13.540996 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.svg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:27:26.987815 #21995]  INFO -- : Started GET "/users/confirmation?confirmation_token=aAVhzyh7yum4oxUveQZu" for 10.0.2.2 at 2015-11-24 06:27:26 +0000
+I, [2015-11-24T06:27:27.002784 #21995]  INFO -- : Processing by Devise::ConfirmationsController#show as HTML
+I, [2015-11-24T06:27:27.003505 #21995]  INFO -- :   Parameters: {"confirmation_token"=>"aAVhzyh7yum4oxUveQZu"}
+D, [2015-11-24T06:27:27.006645 #21995] DEBUG -- :   [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`confirmation_token` = 'aAVhzyh7yum4oxUveQZu'  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-11-24T06:27:27.010227 #21995] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-11-24T06:27:27.023937 #21995] DEBUG -- :   [1m[35mSQL (1.6ms)[0m  UPDATE `users` SET `confirmed_at` = '2015-11-24 06:27:27', `updated_at` = '2015-11-24 06:27:27' WHERE `users`.`id` = 1
+D, [2015-11-24T06:27:27.034916 #21995] DEBUG -- :   [1m[36m (9.4ms)[0m  [1mCOMMIT[0m
+I, [2015-11-24T06:27:27.039213 #21995]  INFO -- : Redirected to http://localhost:3000/users/sign_in
+I, [2015-11-24T06:27:27.040948 #21995]  INFO -- : Completed 302 Found in 36ms (ActiveRecord: 11.7ms)
+I, [2015-11-24T06:27:27.069647 #21995]  INFO -- : Started GET "/users/sign_in" for 10.0.2.2 at 2015-11-24 06:27:27 +0000
+I, [2015-11-24T06:27:27.074231 #21995]  INFO -- : Processing by Users::SessionsController#new as HTML
+I, [2015-11-24T06:27:27.087319 #21995]  INFO -- :   Rendered users/shared/_links.html.erb (1.9ms)
+I, [2015-11-24T06:27:27.087975 #21995]  INFO -- :   Rendered users/sessions/new.html.erb within layouts/application (6.9ms)
+I, [2015-11-24T06:27:27.094964 #21995]  INFO -- : Completed 200 OK in 20ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:27:27.116666 #21995]  INFO -- : Started GET "/assets/application-a1a732464b49156cc2c21bc8941715ad5e7abe3550eef2cb7affc148bc24b4eb.css" for 10.0.2.2 at 2015-11-24 06:27:27 +0000
+I, [2015-11-24T06:27:27.126733 #21995]  INFO -- : Started GET "/assets/application-5c50659594eb1ba61f5dff1b8cfae55deaf38a949d474156351914ae7fad2d3c.js" for 10.0.2.2 at 2015-11-24 06:27:27 +0000
+I, [2015-11-24T06:27:27.366175 #21995]  INFO -- : Started GET "/favicon.ico" for 10.0.2.2 at 2015-11-24 06:27:27 +0000
+F, [2015-11-24T06:27:27.367556 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:27:27.814849 #21995]  INFO -- : Started GET "/apple-touch-icon-precomposed.png" for 10.0.2.2 at 2015-11-24 06:27:27 +0000
+F, [2015-11-24T06:27:27.823598 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:27:27.842502 #21995]  INFO -- : Started GET "/apple-touch-icon.png" for 10.0.2.2 at 2015-11-24 06:27:27 +0000
+F, [2015-11-24T06:27:27.843509 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:27:38.850279 #21995]  INFO -- : Started POST "/users/sign_in" for 10.0.2.2 at 2015-11-24 06:27:38 +0000
+I, [2015-11-24T06:27:38.852706 #21995]  INFO -- : Processing by Users::SessionsController#create as HTML
+I, [2015-11-24T06:27:38.852918 #21995]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"xaJwYYn72rgh9khLpK2/eRmwso6Am3rwe9YfD5cJcUBVWkUNfkD6z5GqANSkxfE85AAPZea4qztRt1yYaKF1OQ==", "user"=>{"login"=>"bungo", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+D, [2015-11-24T06:27:38.854569 #21995] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE (username = 'bungo' OR lower(email) = lower('bungo'))  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-11-24T06:27:38.940696 #21995] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-11-24T06:27:38.942198 #21995] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-11-24 06:27:38', `current_sign_in_at` = '2015-11-24 06:27:38', `last_sign_in_ip` = '10.0.2.2', `current_sign_in_ip` = '10.0.2.2', `sign_in_count` = 1, `updated_at` = '2015-11-24 06:27:38' WHERE `users`.`id` = 1
+D, [2015-11-24T06:27:38.945744 #21995] DEBUG -- :   [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+I, [2015-11-24T06:27:38.972939 #21995]  INFO -- : Redirected to http://localhost:3000/users/index
+I, [2015-11-24T06:27:38.973262 #21995]  INFO -- : Completed 302 Found in 120ms (ActiveRecord: 3.2ms)
+I, [2015-11-24T06:27:38.981478 #21995]  INFO -- : Started GET "/users/index" for 10.0.2.2 at 2015-11-24 06:27:38 +0000
+I, [2015-11-24T06:27:38.983499 #21995]  INFO -- : Processing by UsersController#index as HTML
+D, [2015-11-24T06:27:38.985073 #21995] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+I, [2015-11-24T06:27:39.019051 #21995]  INFO -- :   Rendered users/index.html.erb within layouts/application (1.3ms)
+I, [2015-11-24T06:27:39.020587 #21995]  INFO -- : Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.4ms)
+I, [2015-11-24T06:27:48.106894 #21995]  INFO -- : Started GET "/users/index" for 10.0.2.2 at 2015-11-24 06:27:48 +0000
+I, [2015-11-24T06:27:48.108641 #21995]  INFO -- : Processing by UsersController#index as HTML
+D, [2015-11-24T06:27:48.110253 #21995] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2015-11-24T06:27:48.133302 #21995]  INFO -- :   Rendered users/index.html.erb within layouts/application (0.6ms)
+I, [2015-11-24T06:27:48.135154 #21995]  INFO -- : Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.3ms)
+I, [2015-11-24T06:27:56.169856 #21995]  INFO -- : Started GET "/users/index" for 10.0.2.2 at 2015-11-24 06:27:56 +0000
+I, [2015-11-24T06:27:56.170410 #21995]  INFO -- : Processing by UsersController#index as HTML
+D, [2015-11-24T06:27:56.171735 #21995] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+I, [2015-11-24T06:27:56.173106 #21995]  INFO -- :   Rendered users/index.html.erb within layouts/application (0.1ms)
+I, [2015-11-24T06:27:56.173934 #21995]  INFO -- : Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+I, [2015-11-24T06:27:56.828440 #21995]  INFO -- : Started GET "/users/new" for 10.0.2.2 at 2015-11-24 06:27:56 +0000
+I, [2015-11-24T06:27:56.832771 #21995]  INFO -- : Processing by UsersController#new as HTML
+D, [2015-11-24T06:27:56.838996 #21995] DEBUG -- :   [1m[36mUser Load (1.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2015-11-24T06:27:56.886104 #21995]  INFO -- :   Rendered users/new.html.erb within layouts/application (7.5ms)
+I, [2015-11-24T06:27:56.887447 #21995]  INFO -- : Completed 200 OK in 54ms (Views: 31.3ms | ActiveRecord: 4.5ms)
+I, [2015-11-24T06:28:01.358688 #21995]  INFO -- : Started GET "/sign_out" for 10.0.2.2 at 2015-11-24 06:28:01 +0000
+I, [2015-11-24T06:28:01.359831 #21995]  INFO -- : Processing by Users::SessionsController#destroy as HTML
+D, [2015-11-24T06:28:01.360943 #21995] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-11-24T06:28:01.370614 #21995] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-11-24T06:28:01.371580 #21995] DEBUG -- :   [1m[35m (0.1ms)[0m  COMMIT
+I, [2015-11-24T06:28:01.372909 #21995]  INFO -- : Redirected to http://localhost:3000/
+I, [2015-11-24T06:28:01.373763 #21995]  INFO -- : Completed 302 Found in 14ms (ActiveRecord: 0.5ms)
+I, [2015-11-24T06:28:01.380746 #21995]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 06:28:01 +0000
+I, [2015-11-24T06:28:01.381845 #21995]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T06:28:01.408638 #21995]  INFO -- :   Rendered home/index.html.erb within layouts/application (2.2ms)
+I, [2015-11-24T06:28:01.409818 #21995]  INFO -- : Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:28:01.420516 #21995]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 06:28:01 +0000
+F, [2015-11-24T06:28:01.421962 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:28:01.432681 #21995]  INFO -- : Started GET "/images/home1.jpg" for 10.0.2.2 at 2015-11-24 06:28:01 +0000
+F, [2015-11-24T06:28:01.435643 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/home1.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:28:01.450008 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff" for 10.0.2.2 at 2015-11-24 06:28:01 +0000
+F, [2015-11-24T06:28:01.452585 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:28:01.459273 #21995]  INFO -- : Started GET "/assets/twitter/bootstrap/glyphicons-halflings-regular-fc969dc1c6ff531abcf368089dcbaf5775133b0626ff56b52301a059fc0f9e1e.woff" for 10.0.2.2 at 2015-11-24 06:28:01 +0000
+I, [2015-11-24T06:28:01.486794 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.ttf" for 10.0.2.2 at 2015-11-24 06:28:01 +0000
+F, [2015-11-24T06:28:01.494423 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:28:01.570615 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.svg" for 10.0.2.2 at 2015-11-24 06:28:01 +0000
+F, [2015-11-24T06:28:01.572146 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.svg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:28:11.378862 #21995]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 06:28:11 +0000
+I, [2015-11-24T06:28:11.380568 #21995]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T06:28:11.382820 #21995]  INFO -- :   Rendered home/index.html.erb within layouts/application (1.3ms)
+I, [2015-11-24T06:28:11.383789 #21995]  INFO -- : Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:28:11.405128 #21995]  INFO -- : Started GET "/assets/application-a1a732464b49156cc2c21bc8941715ad5e7abe3550eef2cb7affc148bc24b4eb.css" for 10.0.2.2 at 2015-11-24 06:28:11 +0000
+I, [2015-11-24T06:28:11.412802 #21995]  INFO -- : Started GET "/assets/application-5c50659594eb1ba61f5dff1b8cfae55deaf38a949d474156351914ae7fad2d3c.js" for 10.0.2.2 at 2015-11-24 06:28:11 +0000
+I, [2015-11-24T06:28:11.418777 #21995]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 06:28:11 +0000
+F, [2015-11-24T06:28:11.420597 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:28:11.563440 #21995]  INFO -- : Started GET "/images/home1.jpg" for 10.0.2.2 at 2015-11-24 06:28:11 +0000
+F, [2015-11-24T06:28:11.564144 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/home1.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:28:11.588444 #21995]  INFO -- : Started GET "/assets/twitter/bootstrap/glyphicons-halflings-regular-fc969dc1c6ff531abcf368089dcbaf5775133b0626ff56b52301a059fc0f9e1e.woff" for 10.0.2.2 at 2015-11-24 06:28:11 +0000
+I, [2015-11-24T06:28:11.593640 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff" for 10.0.2.2 at 2015-11-24 06:28:11 +0000
+F, [2015-11-24T06:28:11.595048 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:28:11.685168 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.ttf" for 10.0.2.2 at 2015-11-24 06:28:11 +0000
+F, [2015-11-24T06:28:11.686336 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:28:11.710377 #21995]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.svg" for 10.0.2.2 at 2015-11-24 06:28:11 +0000
+F, [2015-11-24T06:28:11.711420 #21995] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.svg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:30:04.136668 #22073]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 06:30:04 +0000
+I, [2015-11-24T06:30:04.161421 #22073]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T06:30:04.528168 #22073]  INFO -- :   Rendered home/index.html.erb within layouts/application (295.3ms)
+I, [2015-11-24T06:30:04.538366 #22073]  INFO -- : Completed 200 OK in 377ms (Views: 356.2ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:30:04.614198 #22073]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 06:30:04 +0000
+F, [2015-11-24T06:30:04.615012 #22073] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:30:06.082345 #22073]  INFO -- : Started GET "/images/home1.jpg" for 10.0.2.2 at 2015-11-24 06:30:06 +0000
+F, [2015-11-24T06:30:06.083147 #22073] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/home1.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:30:06.743646 #22073]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff" for 10.0.2.2 at 2015-11-24 06:30:06 +0000
+F, [2015-11-24T06:30:06.752156 #22073] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:30:06.905501 #22073]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.ttf" for 10.0.2.2 at 2015-11-24 06:30:06 +0000
+F, [2015-11-24T06:30:06.909289 #22073] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:30:06.958210 #22073]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.svg" for 10.0.2.2 at 2015-11-24 06:30:06 +0000
+F, [2015-11-24T06:30:06.959561 #22073] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.svg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:30:53.206035 #22173]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 06:30:53 +0000
+I, [2015-11-24T06:30:53.232784 #22173]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T06:30:53.563563 #22173]  INFO -- :   Rendered home/index.html.erb within layouts/application (264.5ms)
+I, [2015-11-24T06:30:53.575426 #22173]  INFO -- : Completed 200 OK in 342ms (Views: 327.3ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:30:53.667108 #22173]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 06:30:53 +0000
+F, [2015-11-24T06:30:53.668774 #22173] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:30:53.686740 #22173]  INFO -- : Started GET "/images/home1.jpg" for 10.0.2.2 at 2015-11-24 06:30:53 +0000
+F, [2015-11-24T06:30:53.688677 #22173] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/images/home1.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:30:53.697992 #22173]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff" for 10.0.2.2 at 2015-11-24 06:30:53 +0000
+F, [2015-11-24T06:30:53.698991 #22173] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:30:53.721696 #22173]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.ttf" for 10.0.2.2 at 2015-11-24 06:30:53 +0000
+F, [2015-11-24T06:30:53.728301 #22173] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:30:53.834715 #22173]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.svg" for 10.0.2.2 at 2015-11-24 06:30:53 +0000
+F, [2015-11-24T06:30:53.839854 #22173] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.svg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:34:46.407440 #22275]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 06:34:46 +0000
+I, [2015-11-24T06:34:46.436770 #22275]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T06:34:46.794786 #22275]  INFO -- :   Rendered home/index.html.erb within layouts/application (286.2ms)
+I, [2015-11-24T06:34:46.807671 #22275]  INFO -- : Completed 200 OK in 370ms (Views: 352.9ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:34:46.841109 #22275]  INFO -- : Started GET "/assets/application-48bae2d11846b8a3855bc63fccfcbdcb008f6cf23c95a5e32f147f71cb1cb41d.css" for 10.0.2.2 at 2015-11-24 06:34:46 +0000
+I, [2015-11-24T06:34:48.181112 #22275]  INFO -- : Started GET "/assets/application-5c50659594eb1ba61f5dff1b8cfae55deaf38a949d474156351914ae7fad2d3c.js" for 10.0.2.2 at 2015-11-24 06:34:48 +0000
+I, [2015-11-24T06:34:48.557593 #22275]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 06:34:48 +0000
+F, [2015-11-24T06:34:48.560015 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:34:48.599742 #22275]  INFO -- : Started GET "/assets/home1-e073b1865b1d6c4fcda3c1d534713d0563553d8ff0cc3bca375644fe2f612135.jpg" for 10.0.2.2 at 2015-11-24 06:34:48 +0000
+I, [2015-11-24T06:34:48.646079 #22275]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff" for 10.0.2.2 at 2015-11-24 06:34:48 +0000
+F, [2015-11-24T06:34:48.647681 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:34:48.677353 #22275]  INFO -- : Started GET "/assets/twitter/bootstrap/glyphicons-halflings-regular-fc969dc1c6ff531abcf368089dcbaf5775133b0626ff56b52301a059fc0f9e1e.woff" for 10.0.2.2 at 2015-11-24 06:34:48 +0000
+I, [2015-11-24T06:34:48.707325 #22275]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.ttf" for 10.0.2.2 at 2015-11-24 06:34:48 +0000
+F, [2015-11-24T06:34:48.709349 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:34:48.724087 #22275]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.svg" for 10.0.2.2 at 2015-11-24 06:34:48 +0000
+F, [2015-11-24T06:34:48.724927 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.svg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:34:51.313051 #22275]  INFO -- : Started GET "/users/sign_in" for 10.0.2.2 at 2015-11-24 06:34:51 +0000
+I, [2015-11-24T06:34:51.315111 #22275]  INFO -- : Processing by Users::SessionsController#new as HTML
+I, [2015-11-24T06:34:51.435634 #22275]  INFO -- :   Rendered users/shared/_links.html.erb (2.4ms)
+I, [2015-11-24T06:34:51.435871 #22275]  INFO -- :   Rendered users/sessions/new.html.erb within layouts/application (43.3ms)
+I, [2015-11-24T06:34:51.438098 #22275]  INFO -- : Completed 200 OK in 122ms (Views: 102.4ms | ActiveRecord: 1.2ms)
+I, [2015-11-24T06:34:55.299744 #22275]  INFO -- : Started POST "/users/sign_in" for 10.0.2.2 at 2015-11-24 06:34:55 +0000
+I, [2015-11-24T06:34:55.301414 #22275]  INFO -- : Processing by Users::SessionsController#create as HTML
+I, [2015-11-24T06:34:55.301712 #22275]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"kBLOt8TmW/Fbpmcs9ZsHFr9JOxlRfozq3cNfCn+U9yjtgfRS1Lx5PkgkO47W/r3NLnQuee9hS0M82OTcPner4w==", "user"=>{"login"=>"bungotakahasshi@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+D, [2015-11-24T06:34:55.304695 #22275] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE (username = 'bungotakahasshi@gmail.com' OR lower(email) = lower('bungotakahasshi@gmail.com'))  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2015-11-24T06:34:55.305407 #22275]  INFO -- : Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+I, [2015-11-24T06:34:55.306945 #22275]  INFO -- : Processing by Users::SessionsController#new as HTML
+I, [2015-11-24T06:34:55.307211 #22275]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"kBLOt8TmW/Fbpmcs9ZsHFr9JOxlRfozq3cNfCn+U9yjtgfRS1Lx5PkgkO47W/r3NLnQuee9hS0M82OTcPner4w==", "user"=>{"login"=>"bungotakahasshi@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+I, [2015-11-24T06:34:55.427983 #22275]  INFO -- :   Rendered users/shared/_links.html.erb (0.5ms)
+I, [2015-11-24T06:34:55.428347 #22275]  INFO -- :   Rendered users/sessions/new.html.erb within layouts/application (4.3ms)
+I, [2015-11-24T06:34:55.429471 #22275]  INFO -- : Completed 200 OK in 122ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:34:58.250204 #22275]  INFO -- : Started POST "/users/sign_in" for 10.0.2.2 at 2015-11-24 06:34:58 +0000
+I, [2015-11-24T06:34:58.251950 #22275]  INFO -- : Processing by Users::SessionsController#create as HTML
+I, [2015-11-24T06:34:58.252221 #22275]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"svuNtRKMUJkSB1NiYYxAhzCxsQJOWeZ6e+PqUooLZwXPaLdQAtZyVgGFD8BC6fpcoYykYvBGIdOa+FGEy+g7zg==", "user"=>{"login"=>"bungotakahasshi@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+D, [2015-11-24T06:34:58.254389 #22275] DEBUG -- :   [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE (username = 'bungotakahasshi@gmail.com' OR lower(email) = lower('bungotakahasshi@gmail.com'))  ORDER BY `users`.`id` ASC LIMIT 1
+I, [2015-11-24T06:34:58.254822 #22275]  INFO -- : Completed 401 Unauthorized in 2ms (ActiveRecord: 0.6ms)
+I, [2015-11-24T06:34:58.255816 #22275]  INFO -- : Processing by Users::SessionsController#new as HTML
+I, [2015-11-24T06:34:58.256159 #22275]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"svuNtRKMUJkSB1NiYYxAhzCxsQJOWeZ6e+PqUooLZwXPaLdQAtZyVgGFD8BC6fpcoYykYvBGIdOa+FGEy+g7zg==", "user"=>{"login"=>"bungotakahasshi@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+I, [2015-11-24T06:34:58.336549 #22275]  INFO -- :   Rendered users/shared/_links.html.erb (0.4ms)
+I, [2015-11-24T06:34:58.337220 #22275]  INFO -- :   Rendered users/sessions/new.html.erb within layouts/application (3.4ms)
+I, [2015-11-24T06:34:58.338822 #22275]  INFO -- : Completed 200 OK in 82ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:35:06.740316 #22275]  INFO -- : Started POST "/users/sign_in" for 10.0.2.2 at 2015-11-24 06:35:06 +0000
+I, [2015-11-24T06:35:06.741434 #22275]  INFO -- : Processing by Users::SessionsController#create as HTML
+I, [2015-11-24T06:35:06.741671 #22275]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"JjDJwMuQpW+4/nSw/4NdL1Qmiz96MVuCWjOrOG7KfCJbo/Ml28qHoKt8KBLc5uf0xRueX8QunCu7KBDuLykg6Q==", "user"=>{"login"=>"bungotakahasshi@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+D, [2015-11-24T06:35:06.743412 #22275] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE (username = 'bungotakahasshi@gmail.com' OR lower(email) = lower('bungotakahasshi@gmail.com'))  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2015-11-24T06:35:06.743454 #22275]  INFO -- : Completed 401 Unauthorized in 2ms (ActiveRecord: 0.3ms)
+I, [2015-11-24T06:35:06.744279 #22275]  INFO -- : Processing by Users::SessionsController#new as HTML
+I, [2015-11-24T06:35:06.744475 #22275]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"JjDJwMuQpW+4/nSw/4NdL1Qmiz96MVuCWjOrOG7KfCJbo/Ml28qHoKt8KBLc5uf0xRueX8QunCu7KBDuLykg6Q==", "user"=>{"login"=>"bungotakahasshi@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+I, [2015-11-24T06:35:06.826363 #22275]  INFO -- :   Rendered users/shared/_links.html.erb (0.4ms)
+I, [2015-11-24T06:35:06.826611 #22275]  INFO -- :   Rendered users/sessions/new.html.erb within layouts/application (3.1ms)
+I, [2015-11-24T06:35:06.827756 #22275]  INFO -- : Completed 200 OK in 83ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:35:14.411378 #22275]  INFO -- : Started POST "/users/sign_in" for 10.0.2.2 at 2015-11-24 06:35:14 +0000
+I, [2015-11-24T06:35:14.412864 #22275]  INFO -- : Processing by Users::SessionsController#create as HTML
+I, [2015-11-24T06:35:14.413209 #22275]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"QnM5nFzC+4y+zRfpywZ+cjrOT6jPVztXygPfhJo6fG4/4AN5TJjZQ61PS0voY8Spq/NayHFI/P4rGGRS29kgpQ==", "user"=>{"login"=>"bungo", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+D, [2015-11-24T06:35:14.416298 #22275] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE (username = 'bungo' OR lower(email) = lower('bungo'))  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-11-24T06:35:14.494486 #22275] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2015-11-24T06:35:14.497693 #22275] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2015-11-24 06:35:14', `sign_in_count` = 2, `updated_at` = '2015-11-24 06:35:14' WHERE `users`.`id` = 1
+D, [2015-11-24T06:35:14.508433 #22275] DEBUG -- :   [1m[36m (9.9ms)[0m  [1mCOMMIT[0m
+I, [2015-11-24T06:35:14.561193 #22275]  INFO -- : Redirected to http://0.0.0.0:3000/users/index
+I, [2015-11-24T06:35:14.561521 #22275]  INFO -- : Completed 302 Found in 148ms (ActiveRecord: 11.4ms)
+I, [2015-11-24T06:35:14.570987 #22275]  INFO -- : Started GET "/users/index" for 10.0.2.2 at 2015-11-24 06:35:14 +0000
+I, [2015-11-24T06:35:14.573482 #22275]  INFO -- : Processing by UsersController#index as HTML
+D, [2015-11-24T06:35:14.575240 #22275] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+I, [2015-11-24T06:35:14.606800 #22275]  INFO -- :   Rendered users/index.html.erb within layouts/application (1.3ms)
+I, [2015-11-24T06:35:14.608980 #22275]  INFO -- : Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.3ms)
+I, [2015-11-24T06:35:19.183312 #22275]  INFO -- : Started GET "/sign_out" for 10.0.2.2 at 2015-11-24 06:35:19 +0000
+I, [2015-11-24T06:35:19.184107 #22275]  INFO -- : Processing by Users::SessionsController#destroy as HTML
+D, [2015-11-24T06:35:19.185326 #22275] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-11-24T06:35:19.195465 #22275] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-11-24T06:35:19.196473 #22275] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+I, [2015-11-24T06:35:19.197421 #22275]  INFO -- : Redirected to http://0.0.0.0:3000/
+I, [2015-11-24T06:35:19.198130 #22275]  INFO -- : Completed 302 Found in 14ms (ActiveRecord: 0.5ms)
+I, [2015-11-24T06:35:19.204620 #22275]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 06:35:19 +0000
+I, [2015-11-24T06:35:19.206131 #22275]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T06:35:19.233463 #22275]  INFO -- :   Rendered home/index.html.erb within layouts/application (2.3ms)
+I, [2015-11-24T06:35:19.234903 #22275]  INFO -- : Completed 200 OK in 28ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:35:19.281143 #22275]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 06:35:19 +0000
+F, [2015-11-24T06:35:19.283775 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:35:19.355410 #22275]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff" for 10.0.2.2 at 2015-11-24 06:35:19 +0000
+F, [2015-11-24T06:35:19.356875 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:35:19.386956 #22275]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.ttf" for 10.0.2.2 at 2015-11-24 06:35:19 +0000
+F, [2015-11-24T06:35:19.387965 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:35:19.425898 #22275]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.svg" for 10.0.2.2 at 2015-11-24 06:35:19 +0000
+F, [2015-11-24T06:35:19.429531 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.svg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:35:46.802938 #22275]  INFO -- : Started GET "/users/sign_in" for 10.0.2.2 at 2015-11-24 06:35:46 +0000
+I, [2015-11-24T06:35:46.804068 #22275]  INFO -- : Processing by Users::SessionsController#new as HTML
+I, [2015-11-24T06:35:46.810121 #22275]  INFO -- :   Rendered users/shared/_links.html.erb (0.5ms)
+I, [2015-11-24T06:35:46.810485 #22275]  INFO -- :   Rendered users/sessions/new.html.erb within layouts/application (3.5ms)
+I, [2015-11-24T06:35:46.811775 #22275]  INFO -- : Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:35:52.089279 #22275]  INFO -- : Started POST "/users/sign_in" for 10.0.2.2 at 2015-11-24 06:35:52 +0000
+I, [2015-11-24T06:35:52.090859 #22275]  INFO -- : Processing by Users::SessionsController#create as HTML
+I, [2015-11-24T06:35:52.091170 #22275]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y9Sh2i4LVJsi+JrDXFGQxBoPdu4QY+YPT9xx/Wi9jFyN8GNW+VOAfs6nN6VYjoLaUsQW9etSCl6IUnRakuA0tg==", "user"=>{"login"=>"blovingtg@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+D, [2015-11-24T06:35:52.093442 #22275] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE (username = 'blovingtg@gmail.com' OR lower(email) = lower('blovingtg@gmail.com'))  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2015-11-24T06:35:52.173013 #22275] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+D, [2015-11-24T06:35:52.174662 #22275] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-11-24 06:35:14', `current_sign_in_at` = '2015-11-24 06:35:52', `sign_in_count` = 3, `updated_at` = '2015-11-24 06:35:52' WHERE `users`.`id` = 1
+D, [2015-11-24T06:35:52.178202 #22275] DEBUG -- :   [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+I, [2015-11-24T06:35:52.179541 #22275]  INFO -- : Redirected to http://0.0.0.0:3000/users/index
+I, [2015-11-24T06:35:52.180570 #22275]  INFO -- : Completed 302 Found in 89ms (ActiveRecord: 4.0ms)
+I, [2015-11-24T06:35:52.188114 #22275]  INFO -- : Started GET "/users/index" for 10.0.2.2 at 2015-11-24 06:35:52 +0000
+I, [2015-11-24T06:35:52.189891 #22275]  INFO -- : Processing by UsersController#index as HTML
+D, [2015-11-24T06:35:52.191611 #22275] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+I, [2015-11-24T06:35:52.192705 #22275]  INFO -- :   Rendered users/index.html.erb within layouts/application (0.1ms)
+I, [2015-11-24T06:35:52.193743 #22275]  INFO -- : Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+I, [2015-11-24T06:35:54.569475 #22275]  INFO -- : Started GET "/sign_out" for 10.0.2.2 at 2015-11-24 06:35:54 +0000
+I, [2015-11-24T06:35:54.570687 #22275]  INFO -- : Processing by Users::SessionsController#destroy as HTML
+D, [2015-11-24T06:35:54.572081 #22275] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2015-11-24T06:35:54.573620 #22275] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2015-11-24T06:35:54.574864 #22275] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+I, [2015-11-24T06:35:54.575711 #22275]  INFO -- : Redirected to http://0.0.0.0:3000/
+I, [2015-11-24T06:35:54.576576 #22275]  INFO -- : Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+I, [2015-11-24T06:35:54.582742 #22275]  INFO -- : Started GET "/" for 10.0.2.2 at 2015-11-24 06:35:54 +0000
+I, [2015-11-24T06:35:54.583780 #22275]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-11-24T06:35:54.586876 #22275]  INFO -- :   Rendered home/index.html.erb within layouts/application (1.9ms)
+I, [2015-11-24T06:35:54.588134 #22275]  INFO -- : Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+I, [2015-11-24T06:35:54.602026 #22275]  INFO -- : Started GET "/stylesheets/home2.css" for 10.0.2.2 at 2015-11-24 06:35:54 +0000
+F, [2015-11-24T06:35:54.603034 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/home2.css"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:35:54.657740 #22275]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.woff" for 10.0.2.2 at 2015-11-24 06:35:54 +0000
+F, [2015-11-24T06:35:54.659635 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:35:54.707760 #22275]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.ttf" for 10.0.2.2 at 2015-11-24 06:35:54 +0000
+F, [2015-11-24T06:35:54.709131 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-11-24T06:35:54.741441 #22275]  INFO -- : Started GET "/fonts/bootstrap/glyphicons-halflings-regular.svg" for 10.0.2.2 at 2015-11-24 06:35:54 +0000
+F, [2015-11-24T06:35:54.742624 #22275] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap/glyphicons-halflings-regular.svg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/vagrant/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+

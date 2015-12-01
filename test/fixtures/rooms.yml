@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  apartment_id: 1
+  rent: 1.5
+  layout: 
+  request: MyString
+
+two:
+  apartment_id: 1
+  rent: 1.5
+  layout: 
+  request: MyString

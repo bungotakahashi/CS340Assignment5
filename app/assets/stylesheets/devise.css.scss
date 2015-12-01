@@ -1,0 +1,64 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+    background-image: image-url("home1.jpg");
+
+	h1{
+		color: white;
+		opacity: 0.9;
+		font-size: 70px;
+		text-align:center;
+		margin-top: 150px;
+		text-shadow:
+    		-1px -1px 0 black,
+    		1px -1px 0 black,
+    		-1px 1px 0 black,
+    		1px 1px 0 black; 
+		//margin-left: auto;
+		//margin-right: auto;
+		//width: auto;
+	}
+	.row{
+		margin-top: 10px;
+		margin-left: 50px;
+	}
+	#row-exception{
+		position:absolute;
+    	bottom:3%;
+    	left:0;	
+    	width:70%;
+    }
+	.login .row{
+		margin-top: 10px;
+	}
+	h2{
+		color: white;
+		opacity: 0.9;
+		font-size: 70px;
+		text-shadow:
+    		-1px -1px 0 black,
+    		1px -1px 0 black,
+    		-1px 1px 0 black,
+    		1px 1px 0 black; 
+		margin-bottom: 50px;
+		//margin-right: auto;
+		//width: auto;
+	}
+	.field-name{
+		color: white;
+		opacity: 0.9;
+		font-size: 20px;
+		text-shadow:
+    		-1px -1px 0 black,
+    		1px -1px 0 black,
+    		-1px 1px 0 black,
+    		1px 1px 0 black; 
+	}
+
+	a{
+		color: white;
+		font-size: 20px;
+	}
+
+}

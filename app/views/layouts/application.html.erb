@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apartment</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class='<%= "#{controller.controller_name}" %>'>
+<header>
+    <nav>
+      <% if user_signed_in? %> 
+        <!--Logged in as <strong><%= current_user.username %></strong>.-->
+        <%= link_to 'Change Profile', edit_user_registration_path %> |
+        <%= link_to "Logout", sign_out_path %>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <h4 class="navbar-brand">Hello <%= current_user.username %></h4>
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href=<%=users_index_path%> class="navbar-brand"><div class="but">Home</div></a></li>
+              <li><a href=<%=users_new_path%> class="navbar-brand"> <div class="but">Add New Apartment</div></a></li>
+              <li><a href=<%=users_analysis_path%> class="navbar-brand"><div class="but">Analysis</div></a></li>
+            </ul>     
+            </div>
+          </div>
+        </nav>
+
+      <% else %>
+<!--        <%= link_to "sign in", new_user_registration_path %> |
+        <%= link_to "login", new_user_session_path %> 
+-->
+      <% end %>
+    </nav>
+  </header>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+<div class="container">
+<%= yield %>
+</div>
+
+</body>
+</html>
