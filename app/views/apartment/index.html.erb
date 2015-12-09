@@ -1,0 +1,46 @@
+<h1>Rooms in <%=@apartment.name%></h1>
+<div class="row">
+   	<div class="col-xs-3 col-sm-3 col-md-3">
+        <%= link_to "Add a room", apartment_room_new_path(:id => @apartment.id), :class=> 'btn btn-primary btn-block' %>
+    </div>
+</div>
+
+<%if @room!=nil%>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Resident</th>
+      <th>Layout</th>
+      <th>Rent</th>
+      <th>delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% i=-1%>
+    <% @room.each do |row| %>
+    	<%i+=1%>
+
+    	<%if i%4==0%>
+    		<tr class="info">
+    	<%elsif i%4==1%>
+    	    <tr class="success">
+    	<%elsif i%4==2%>
+    	    <tr class="warning">
+     	<%elsif i%4==3%>
+    	    <tr class="danger">
+    	<%end%>
+    		<td><%=row.id%></td>
+    		<%if row.live.present?%>
+    		  <td><%= row.live.ssn%></td>
+    		<%else%>
+    		  <td>NONE</td>
+    		<%end%>
+    		<td><%=link_to "layout", apartment_room_layout_path(:id => row.id)%></td>
+			<td><%=row.rent%></td>
+    		<td><%=link_to "delete", apartment_room_destroy_path(:id => row.id),data: {confirm: "Are you sure?"}%></td>
+		</tr>
+	<% end %>
+   </tbody>
+</table>
+<%end%>

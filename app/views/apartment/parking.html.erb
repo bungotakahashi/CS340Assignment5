@@ -1,0 +1,40 @@
+<h1>Parking lots in <%=@apartment.name%></h1>
+<div class="row">
+   	<div class="col-xs-3 col-sm-3 col-md-3">
+        <%= link_to "Add a parking lot", apartment_parking_new_path(:id => @apartment.id), :class=> 'btn btn-primary btn-block' %>
+    </div>
+</div>
+
+<%if @parking!=nil%>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Renter SSN</th>
+      <th>edit</th>
+      <th>delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% i=-1%>
+    <% @parking.each do |row| %>
+    	<%i+=1%>
+
+    	<%if i%4==0%>
+    		<tr class="info">
+    	<%elsif i%4==1%>
+    	    <tr class="success">
+    	<%elsif i%4==2%>
+    	    <tr class="warning">
+     	<%elsif i%4==3%>
+    	    <tr class="danger">
+    	<%end%>
+			  <td><%=row.id%></td>
+        <td><%=row.ssn%></td>
+        <td><%=link_to "edit", apartment_parking_edit_path(:id => row.id, :apartment_id => row.apartment_id)%></td>
+    		<td><%=link_to "delete", apartment_parking_destroy_path(:id => row.id),data: {confirm: "Are you sure?"}%></td>
+		</tr>
+	<% end %>
+   </tbody>
+</table>
+<%end%>

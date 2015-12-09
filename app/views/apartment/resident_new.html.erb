@@ -1,0 +1,30 @@
+<% @resident.errors.each do |att,msg|  %>
+ <%=att%><%=": "%><%=msg%></br>
+<% end %>
+<% flash.each do |key, value| %>
+    <%= value %>
+ <% end %>
+<%=form_for(@resident, url: apartment_resident_create_path ,:html => {:multipart=>true,:class => "form-horizontal"}, :method=>"post") do |f|%>
+<fieldset>
+  <legend>New Resident</legend>
+  <%= f.hidden_field :apartment_id, :value => @apartment.id %>
+  <div class="field">
+  <%=f.label :ssn, "SSN (format: xxx-xx-xxxx)"%><br/>
+  <%=f.text_field :ssn %>
+  </div> 
+
+  <div class="field">
+  <%=f.label :room_id, "Room ID"%><br/>
+  <%=f.text_field :room_id %>
+  </div> 
+
+  <div class="document">
+	<%=f.label :document%><br/>
+	<%=f.file_field :document %>
+  </div>
+
+  <div class="submit">
+  	<%=f.submit "Add a new resident", class: "btn btn-primary"%>
+  </div>
+</fieldset>
+<%end%>

@@ -1,5 +1,31 @@
 Rails.application.routes.draw do
 
+  get 'apartment/room_new'
+  post 'apartment/room_create'
+  get 'apartment/room_update'
+  get 'apartment/room_edit'
+  get 'apartment/room_destroy'
+  get 'apartment/room_show'
+  get 'apartment/index'
+  get 'apartment/room_layout'
+  get 'apartment/layout_get_image'
+
+  get 'apartment/resident'
+  get 'apartment/resident_new'
+  post 'apartment/resident_create'
+  get 'apartment/resident_update'
+  get 'apartment/resident_edit'
+  get 'apartment/resident_destroy'
+  get 'apartment/resident_show'
+  get 'apartment/resident_document'
+  get 'apartment/resident_get_image'
+
+  get 'apartment/parking'
+  get 'apartment/parking_new'
+  post 'apartment/parking_create'
+  post 'apartment/parking_update'
+  get 'apartment/parking_edit'
+  get 'apartment/parking_destroy'
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
@@ -21,6 +47,7 @@ Rails.application.routes.draw do
   get 'users/destroy'
   get 'users/details'
   get 'users/analysis'
+  get 'users/room_new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

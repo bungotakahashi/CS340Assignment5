@@ -1,0 +1,20 @@
+<% @parking.errors.each do |att,msg|  %>
+ <%=att%><%=": "%><%=msg%></br>
+<% end %>
+<% flash.each do |key, value| %>
+    <%= value %>
+ <% end %>
+<%=form_for(@parking, url: apartment_parking_create_path ,:html => {:multipart=>true,:class => "form-horizontal"}, :method=>"post") do |f|%>
+<fieldset>
+  <legend>New Parking Lot</legend>
+  <%= f.hidden_field :apartment_id, :value => @apartment.id %>
+  <div class="field">
+  <%=f.label :ssn, "Renter SSN (Leave it blank if it's not rented, format: xxx-xx-xxxx)"%><br/>
+  <%=f.text_field :ssn %>
+  </div> 
+
+  <div class="submit">
+  	<%=f.submit "Add a new lot", class: "btn btn-primary"%>
+  </div>
+</fieldset>
+<%end%>

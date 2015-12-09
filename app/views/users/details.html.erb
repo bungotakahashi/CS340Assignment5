@@ -23,3 +23,16 @@
    </tbody>
 </table>
 <%end%>
+
+<div class="row">
+   	<div class="col-xs-3 col-sm-3 col-md-3">
+        <%= link_to "Rooms", apartment_index_path(:id => @apartment.id), :class=> 'btn btn-success btn-block' %>
+    </div>
+   	<div class="col-xs-3 col-sm-3 col-md-3">
+        <%= link_to "Residents", apartment_resident_path(:id => @apartment.id), :class=> 'btn btn-success btn-block' %>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+        <%= link_to "Parking Lots", apartment_parking_path(:id => @apartment.id), :class=> 'btn btn-success btn-block' %>
+    </div>
+
+</div>
